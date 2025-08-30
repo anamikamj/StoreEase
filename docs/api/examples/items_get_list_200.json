@@ -1,0 +1,26 @@
+{
+  "page": 1,
+  "size": 10,
+  "totalItems": 42,
+  "totalPages": 5,
+  "items": [
+    {
+      "id": 101,
+      "name": "Physics Book",
+      "type": "book",
+      "price": 150.0,
+      "quantity": 20,
+      "threshold": 5,
+      "imageUrl": "https://example.com/img/physics.jpg"
+    },
+    {
+      "id": 102,
+      "name": "Chemistry Kit",
+      "type": "kit",
+      "price": 499.0,
+      "quantity": 12,
+      "threshold": 3,
+      "imageUrl": "https://example.com/img/chem_kit.jpg"
+    }
+  ]
+}

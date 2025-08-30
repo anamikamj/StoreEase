@@ -1,0 +1,22 @@
+{
+  "message": "Order created successfully",
+  "order": {
+    "orderId": 9001,
+    "userId": 501,
+    "items": [
+      {
+        "itemId": 101,
+        "name": "Physics Book",
+        "quantity": 2,
+        "unitPrice": 150.0,
+        "totalPrice": 300.0
+      }
+    ],
+    "subtotal": 300.0,
+    "tax": 30.0,
+    "shipping": 20.0,
+    "total": 350.0,
+    "status": "PENDING_PAYMENT",
+    "createdAt": "2025-08-30T10:30:00Z"
+  }
+}

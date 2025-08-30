@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": 401,
+    "type": "UNAUTHORIZED",
+    "message": "Access token missing or invalid"
+  }
+}

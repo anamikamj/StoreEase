@@ -1,0 +1,17 @@
+{
+  "userId": 501,
+  "orders": [
+    {
+      "orderId": 9001,
+      "total": 350.0,
+      "status": "PENDING_PAYMENT",
+      "createdAt": "2025-08-30T10:30:00Z"
+    },
+    {
+      "orderId": 8890,
+      "total": 150.0,
+      "status": "DELIVERED",
+      "createdAt": "2025-07-15T09:00:00Z"
+    }
+  ]
+}

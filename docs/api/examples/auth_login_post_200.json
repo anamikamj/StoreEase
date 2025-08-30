@@ -1,0 +1,14 @@
+{
+  "message": "Login successful",
+  "token": {
+    "accessToken": "eyJhbGciOi...exampleAccessToken",
+    "refreshToken": "eyJhbGciOi...exampleRefreshToken",
+    "tokenType": "Bearer",
+    "expiresIn": 3600
+  },
+  "user": {
+    "id": 501,
+    "username": "jdoe",
+    "role": "student"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "message": "Cart item quantity updated",
+  "cartItem": {
+    "itemId": 101,
+    "quantity": 3,
+    "unitPrice": 150.0,
+    "totalPrice": 450.0
+  },
+  "cartSummary": {
+    "subtotal": 949.0,
+    "totalItems": 2
+  }
+}

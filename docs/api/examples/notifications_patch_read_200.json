@@ -1,0 +1,7 @@
+{
+  "message": "Notification marked as read",
+  "notification": {
+    "id": 3001,
+    "read": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "userId": 501,
+  "notifications": [
+    {
+      "id": 3001,
+      "type": "INFO",
+      "message": "Your order #9001 payment succeeded.",
+      "read": false,
+      "createdAt": "2025-08-30T10:36:00Z"
+    },
+    {
+      "id": 3000,
+      "type": "ALERT",
+      "message": "Item 'Chemistry Kit' stock is low.",
+      "read": true,
+      "createdAt": "2025-08-25T08:00:00Z"
+    }
+  ]
+}

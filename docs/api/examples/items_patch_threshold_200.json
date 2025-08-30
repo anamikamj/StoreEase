@@ -1,0 +1,7 @@
+{
+  "message": "Threshold updated",
+  "item": {
+    "id": 101,
+    "threshold": 10
+  }
+}

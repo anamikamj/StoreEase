@@ -1,0 +1,7 @@
+{
+  "message": "Cart cleared",
+  "cartSummary": {
+    "subtotal": 0.0,
+    "totalItems": 0
+  }
+}

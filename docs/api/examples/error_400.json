@@ -1,0 +1,13 @@
+{
+  "error": {
+    "code": 400,
+    "type": "BAD_REQUEST",
+    "message": "Validation failed",
+    "details": [
+      {
+        "field": "username",
+        "message": "Username is required"
+      }
+    ]
+  }
+}

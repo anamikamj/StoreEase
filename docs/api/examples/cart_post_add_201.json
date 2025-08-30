@@ -1,0 +1,13 @@
+{
+  "message": "Item added to cart",
+  "cartItem": {
+    "itemId": 102,
+    "quantity": 1,
+    "unitPrice": 499.0,
+    "totalPrice": 499.0
+  },
+  "cartSummary": {
+    "subtotal": 799.0,
+    "totalItems": 2
+  }
+}

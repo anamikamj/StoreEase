@@ -1,0 +1,5 @@
+{ 
+  "paymentMethod": "UPI", 
+  "transactionId": "TXN123456789", 
+  "amount": 300.00 
+} 

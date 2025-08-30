@@ -1,0 +1,14 @@
+{
+  "message": "Item updated successfully",
+  "item": {
+    "id": 103,
+    "name": "Discrete Mathematics",
+    "type": "book",
+    "description": "Discrete math — revised edition",
+    "price": 265.0,
+    "quantity": 28,
+    "threshold": 5,
+    "imageUrl": "https://example.com/img/discrete_v2.jpg",
+    "updatedAt": "2025-08-30T09:15:00Z"
+  }
+}

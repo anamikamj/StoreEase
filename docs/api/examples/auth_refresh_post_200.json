@@ -1,0 +1,9 @@
+{
+  "message": "Token refreshed",
+  "token": {
+    "accessToken": "eyJhbGciOi...newAccessToken",
+    "refreshToken": "eyJhbGciOi...newRefreshToken",
+    "tokenType": "Bearer",
+    "expiresIn": 3600
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "message": "User registered successfully",
+  "user": {
+    "id": 501,
+    "username": "jdoe",
+    "role": "student"
+  }
+}

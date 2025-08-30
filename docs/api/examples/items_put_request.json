@@ -1,0 +1,7 @@
+{ 
+  "name": "Advanced Physics Book", 
+  "type": "book", 
+  "price": 200.00, 
+  "quantity": 15, 
+  "threshold": 3 
+} 

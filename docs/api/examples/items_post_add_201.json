@@ -1,0 +1,14 @@
+{
+  "message": "Item added successfully",
+  "item": {
+    "id": 103,
+    "name": "Discrete Math",
+    "type": "book",
+    "description": "Discrete math textbook",
+    "price": 250.0,
+    "quantity": 30,
+    "threshold": 5,
+    "imageUrl": "https://example.com/img/discrete.jpg",
+    "createdAt": "2025-08-30T08:00:00Z"
+  }
+}

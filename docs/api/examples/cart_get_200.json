@@ -1,0 +1,15 @@
+{
+  "userId": 501,
+  "items": [
+    {
+      "itemId": 101,
+      "name": "Physics Book",
+      "quantity": 2,
+      "unitPrice": 150.0,
+      "totalPrice": 300.0
+    }
+  ],
+  "subtotal": 300.0,
+  "shipping": 0.0,
+  "total": 300.0
+}

@@ -1,0 +1,16 @@
+{
+  "message": "Payment processed successfully",
+  "payment": {
+    "paymentId": 7001,
+    "orderId": 9001,
+    "method": "CARD",
+    "amount": 350.0,
+    "status": "SUCCESS",
+    "transactionId": "TXN123456789",
+    "createdAt": "2025-08-30T10:35:00Z"
+  },
+  "order": {
+    "orderId": 9001,
+    "status": "PAID"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "message": "Item removed from cart",
+  "cartSummary": {
+    "subtotal": 499.0,
+    "totalItems": 1
+  }
+}

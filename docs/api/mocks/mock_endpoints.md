@@ -1,160 +1,158 @@
-{
-"info": {
-"name": "StoreEase_API_v1_Mock",
-"\_postman_id": "00000000-0000-0000-0000-000000000000",
-"description": "Mock API collection for StoreEase project, includes success and error responses.",
-"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-},
-"item": [
-{
-"name": "Authentication",
-"item": [
-{
-"name": "POST /auth/login",
-"request": {
-"method": "POST",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": "{\n \"username\": \"example_user\",\n \"password\": \"example_pass\"\n}"
-},
-"url": {
-"raw": "{{baseUrl}}/auth/login",
-"host": ["{{baseUrl}}"],
-"path": ["auth", "login"]
-}
-},
-"response": [
-{
-"name": "200 OK",
-"originalRequest": {},
-"status": "OK",
-"code": 200,
-"body": "{\n \"token\": \"abc123\",\n \"refreshToken\": \"xyz789\"\n}"
-},
-{
-"name": "400 Bad Request",
-"originalRequest": {},
-"status": "Bad Request",
-"code": 400,
-"body": "{\n \"error\": \"Invalid request format\"\n}"
-},
-{
-"name": "401 Unauthorized",
-"originalRequest": {},
-"status": "Unauthorized",
-"code": 401,
-"body": "{\n \"error\": \"Invalid credentials\"\n}"
-}
-]
-},
-{
-"name": "POST /auth/logout",
-"request": {
-"method": "POST",
-"header": [],
-"url": {
-"raw": "{{baseUrl}}/auth/logout",
-"host": ["{{baseUrl}}"],
-"path": ["auth", "logout"]
-}
-},
-"response": [
-{
-"name": "200 OK",
-"originalRequest": {},
-"status": "OK",
-"code": 200,
-"body": "{\n \"message\": \"Logged out successfully\"\n}"
-},
-{
-"name": "401 Unauthorized",
-"originalRequest": {},
-"status": "Unauthorized",
-"code": 401,
-"body": "{\n \"error\": \"Unauthorized\"\n}"
-}
-]
-}
-]
-},
-{
-"name": "Cart",
-"item": [
-{
-"name": "GET /cart",
-"request": {
-"method": "GET",
-"header": [],
-"url": {
-"raw": "{{baseUrl}}/cart",
-"host": ["{{baseUrl}}"],
-"path": ["cart"]
-}
-},
-"response": [
-{
-"name": "200 OK",
-"originalRequest": {},
-"status": "OK",
-"code": 200,
-"body": "{\n \"items\": []\n}"
-},
-{
-"name": "401 Unauthorized",
-"originalRequest": {},
-"status": "Unauthorized",
-"code": 401,
-"body": "{\n \"error\": \"Unauthorized\"\n}"
-}
-]
-},
-{
-"name": "POST /cart/add",
-"request": {
-"method": "POST",
-"header": [],
-"body": {
-"mode": "raw",
-"raw": "{\n \"itemId\": 123,\n \"quantity\": 2\n}"
-},
-"url": {
-"raw": "{{baseUrl}}/cart/add",
-"host": ["{{baseUrl}}"],
-"path": ["cart","add"]
-}
-},
-"response": [
-{
-"name": "201 Created",
-"originalRequest": {},
-"status": "Created",
-"code": 201,
-"body": "{\n \"message\": \"Item added to cart\"\n}"
-},
-{
-"name": "400 Bad Request",
-"originalRequest": {},
-"status": "Bad Request",
-"code": 400,
-"body": "{\n \"error\": \"Invalid request data\"\n}"
-},
-{
-"name": "404 Not Found",
-"originalRequest": {},
-"status": "Not Found",
-"code": 404,
-"body": "{\n \"error\": \"Item not found\"\n}"
-}
-]
-}
-]
-}
-],
-"variable": [
-{
-"key": "baseUrl",
-"value": "http://localhost:8080"
-}
-]
-}
+# StoreEase API Mock Endpoints
+
+This document lists all API endpoints with example requests and responses.  
+Use this for human-readable reference and manual testing.
+
+---
+
+## Authentication Endpoints
+
+### POST /auth/login
+
+- **Request:** `examples/auth_login_request.json`
+- **Success (200):** `examples/auth_login_post_200.json`
+- **Errors:** 400 → `examples/error_400.json`, 401 → `examples/error_401.json`
+
+### POST /auth/logout
+
+- **Success (200):** `examples/auth_logout_post_200.json`
+- **Errors:** 400 → `examples/error_400.json`, 401 → `examples/error_401.json`
+
+### POST /auth/refresh
+
+- **Request:** `examples/auth_refresh_request.json`
+- **Success (200):** `examples/auth_refresh_post_200.json`
+- **Errors:** 401 → `examples/error_401.json`
+
+### POST /auth/register
+
+- **Request:** `examples/auth_register_request.json`
+- **Success (201):** `examples/auth_register_post_201.json`
+- **Errors:** 400 → `examples/error_400.json`
+
+---
+
+## Cart Endpoints
+
+### GET /cart
+
+- **Success (200):** `examples/cart_get_200.json`
+- **Errors:** 401 → `examples/error_401.json`
+
+### POST /cart/add
+
+- **Request:** `examples/cart_post_add_request.json`
+- **Success (201):** `examples/cart_post_add_201.json`
+- **Errors:** 400 → `examples/error_400.json`, 404 → `examples/error_404.json`
+
+### PATCH /cart/item
+
+- **Request:** `examples/cart_patch_update_request.json`
+- **Success (200):** `examples/cart_patch_item_200.json`
+- **Errors:** 400 → `examples/error_400.json`
+
+### DELETE /cart/item
+
+- **Success (200):** `examples/cart_delete_item_200.json`
+- **Errors:** 404 → `examples/error_404.json`
+
+### DELETE /cart/clear
+
+- **Success (200):** `examples/cart_delete_clear_200.json`
+
+---
+
+## Items Endpoints
+
+### GET /items
+
+- **Success (200):** `examples/items_get_list_200.json`
+
+### GET /items/{id}
+
+- **Success (200):** `examples/items_get_single_200.json`
+- **Errors:** 404 → `examples/error_404.json`
+
+### POST /items/add
+
+- **Request:** `examples/items_post_request.json`
+- **Success (201):** `examples/items_post_add_201.json`
+- **Errors:** 400 → `examples/error_400.json`
+
+### PUT /items/update
+
+- **Request:** `examples/items_put_request.json`
+- **Success (200):** `examples/items_put_update_200.json`
+- **Errors:** 400 → `examples/error_400.json`
+
+### PATCH /items/threshold
+
+- **Request:** `examples/items_patch_threshold_request.json`
+- **Success (200):** `examples/items_patch_threshold_200.json`
+- **Errors:** 400 → `examples/error_400.json`
+
+### DELETE /items/{id}
+
+- **Success (200):** `examples/items_delete_200.json`
+- **Errors:** 404 → `examples/error_404.json`
+
+---
+
+## Notifications Endpoints
+
+### GET /notifications
+
+- **Success (200):** `examples/notifications_get_200.json`
+
+### PATCH /notifications/read
+
+- **Success (200):** `examples/notifications_patch_read_200.json`
+
+---
+
+## Orders Endpoints
+
+### GET /orders
+
+- **Success (200):** `examples/orders_get_list_200.json`
+
+### GET /orders/{id}
+
+- **Success (200):** `examples/orders_get_single_200.json`
+- **Errors:** 404 → `examples/error_404.json`
+
+### POST /orders
+
+- **Request:** `examples/orders_post_request.json`
+- **Success (200):** `examples/orders_post_pay_200.json`
+- **Errors:** 400 → `examples/error_400.json`
+
+### POST /orders/checkout
+
+- **Request:** `examples/orders_pay_post_request.json`
+- **Success (201):** `examples/order_post_checkout_201.json`
+- **Errors:** 400 → `examples/error_400.json`
+
+---
+
+## Payments Endpoints
+
+### GET /payments
+
+- **Success (200):** `examples/payments_get_200.json`
+
+---
+
+## Store Endpoints
+
+### GET /store/timings
+
+- **Success (200):** `examples/store_get_timings_200.json`
+
+### PUT /store/timings
+
+- **Request:** `examples/store_timings_put_request.json`
+- **Success (200):** `examples/store_put_timings_200.json`
+- **Errors:** 400 → `examples/error_400.json`
+
+---

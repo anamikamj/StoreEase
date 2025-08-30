@@ -1,0 +1,173 @@
+{
+  "info": {
+    "name": "StoreEase_API_v1_Mock_Complete",
+    "_postman_id": "22222222-2222-2222-2222-222222222222",
+    "description": "Full Postman mock collection for StoreEase API with all endpoints and embedded example responses.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "POST /auth/login",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"example_user\",\n  \"password\": \"example_pass\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth","login"]
+            }
+          },
+          "response": [
+            {"name":"200 OK","status":"OK","code":200,"body":"{\"token\":\"abc123\",\"refreshToken\":\"xyz789\"}"},
+            {"name":"400 Bad Request","status":"Bad Request","code":400,"body":"{\"error\":\"Invalid request format\"}"},
+            {"name":"401 Unauthorized","status":"Unauthorized","code":401,"body":"{\"error\":\"Invalid credentials\"}"}
+          ]
+        },
+        {
+          "name": "POST /auth/logout",
+          "request": {
+            "method": "POST",
+            "url": {"raw":"{{baseUrl}}/auth/logout","host":["{{baseUrl}}"],"path":["auth","logout"]}
+          },
+          "response":[
+            {"name":"200 OK","status":"OK","code":200,"body":"{\"message\":\"Logged out successfully\"}"},
+            {"name":"401 Unauthorized","status":"Unauthorized","code":401,"body":"{\"error\":\"Unauthorized\"}"}
+          ]
+        },
+        {
+          "name":"POST /auth/refresh",
+          "request":{"method":"POST","body":{"mode":"raw","raw":"{\"refreshToken\": \"xyz789\"}"},"url":{"raw":"{{baseUrl}}/auth/refresh","host":["{{baseUrl}}"],"path":["auth","refresh"]}},
+          "response":[
+            {"name":"200 OK","status":"OK","code":200,"body":"{\"token\":\"abc123\",\"refreshToken\":\"xyz789\"}"},
+            {"name":"401 Unauthorized","status":"Unauthorized","code":401,"body":"{\"error\":\"Unauthorized\"}"}
+          ]
+        },
+        {
+          "name":"POST /auth/register",
+          "request":{"method":"POST","body":{"mode":"raw","raw":"{\"username\":\"new_user\",\"password\":\"pass123\",\"email\":\"user@example.com\"}"},"url":{"raw":"{{baseUrl}}/auth/register","host":["{{baseUrl}}"],"path":["auth","register"]}},
+          "response":[
+            {"name":"201 Created","status":"Created","code":201,"body":"{\"message\":\"User registered successfully\"}"},
+            {"name":"400 Bad Request","status":"Bad Request","code":400,"body":"{\"error\":\"Invalid request format\"}"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cart",
+      "item": [
+        {
+          "name":"GET /cart",
+          "request":{"method":"GET","url":{"raw":"{{baseUrl}}/cart","host":["{{baseUrl}}"],"path":["cart"]}},
+          "response":[
+            {"name":"200 OK","status":"OK","code":200,"body":"{\"items\":[]}"},
+            {"name":"401 Unauthorized","status":"Unauthorized","code":401,"body":"{\"error\":\"Unauthorized\"}"}
+          ]
+        },
+        {
+          "name":"POST /cart/add",
+          "request":{"method":"POST","body":{"mode":"raw","raw":"{\"itemId\":123,\"quantity\":2}"},"url":{"raw":"{{baseUrl}}/cart/add","host":["{{baseUrl}}"],"path":["cart","add"]}},
+          "response":[
+            {"name":"201 Created","status":"Created","code":201,"body":"{\"message\":\"Item added to cart\"}"},
+            {"name":"400 Bad Request","status":"Bad Request","code":400,"body":"{\"error\":\"Invalid request data\"}"},
+            {"name":"404 Not Found","status":"Not Found","code":404,"body":"{\"error\":\"Item not found\"}"}
+          ]
+        },
+        {
+          "name":"PATCH /cart/item",
+          "request":{"method":"PATCH","body":{"mode":"raw","raw":"{\"itemId\":123,\"quantity\":5}"},"url":{"raw":"{{baseUrl}}/cart/item","host":["{{baseUrl}}"],"path":["cart","item"]}},
+          "response":[{"name":"200 OK","status":"OK","code":200,"body":"{\"message\":\"Cart item updated\"}"}]
+        },
+        {
+          "name":"DELETE /cart/item",
+          "request":{"method":"DELETE","url":{"raw":"{{baseUrl}}/cart/item","host":["{{baseUrl}}"],"path":["cart","item"]}},
+          "response":[
+            {"name":"200 OK","status":"OK","code":200,"body":"{\"message\":\"Item removed from cart\"}"},
+            {"name":"404 Not Found","status":"Not Found","code":404,"body":"{\"error\":\"Item not found\"}"}
+          ]
+        },
+        {
+          "name":"DELETE /cart/clear",
+          "request":{"method":"DELETE","url":{"raw":"{{baseUrl}}/cart/clear","host":["{{baseUrl}}"],"path":["cart","clear"]}},
+          "response":[{"name":"200 OK","status":"OK","code":200,"body":"{\"message\":\"Cart cleared\"}"}]
+        }
+      ]
+    },
+    {
+      "name":"Items",
+      "item":[
+        {
+          "name":"GET /items",
+          "request":{"method":"GET","url":{"raw":"{{baseUrl}}/items","host":["{{baseUrl}}"],"path":["items"]}},
+          "response":[{"name":"200 OK","status":"OK","code":200,"body":"{\"items\":[]}"}]
+        },
+        {
+          "name":"GET /items/{id}",
+          "request":{"method":"GET","url":{"raw":"{{baseUrl}}/items/1","host":["{{baseUrl}}"],"path":["items","1"]}},
+          "response":[
+            {"name":"200 OK","status":"OK","code":200,"body":"{\"id\":1,\"name\":\"Item1\"}"},
+            {"name":"404 Not Found","status":"Not Found","code":404,"body":"{\"error\":\"Item not found\"}"}
+          ]
+        },
+        {
+          "name":"POST /items/add",
+          "request":{"method":"POST","body":{"mode":"raw","raw":"{\"name\":\"Item1\",\"price\":100}"},"url":{"raw":"{{baseUrl}}/items/add","host":["{{baseUrl}}"],"path":["items","add"]}},
+          "response":[{"name":"201 Created","status":"Created","code":201,"body":"{\"message\":\"Item added\"}"}]
+        }
+      ]
+    },
+    {
+      "name":"Orders",
+      "item":[
+        {
+          "name":"GET /orders",
+          "request":{"method":"GET","url":{"raw":"{{baseUrl}}/orders","host":["{{baseUrl}}"],"path":["orders"]}},
+          "response":[{"name":"200 OK","status":"OK","code":200,"body":"{\"orders\":[]}"}]
+        },
+        {
+          "name":"POST /orders",
+          "request":{"method":"POST","body":{"mode":"raw","raw":"{\"cartId\":1}"},"url":{"raw":"{{baseUrl}}/orders","host":["{{baseUrl}}"],"path":["orders"]}},
+          "response":[{"name":"200 OK","status":"OK","code":200,"body":"{\"message\":\"Order created\"}"}]
+        }
+      ]
+    },
+    {
+      "name":"Store",
+      "item":[
+        {
+          "name":"GET /store/timings",
+          "request":{"method":"GET","url":{"raw":"{{baseUrl}}/store/timings","host":["{{baseUrl}}"],"path":["store","timings"]}},
+          "response":[{"name":"200 OK","status":"OK","code":200,"body":"{\"open\":\"09:00\",\"close\":\"21:00\"}"}]
+        }
+      ]
+    },
+    {
+      "name":"Notifications",
+      "item":[
+        {
+          "name":"GET /notifications",
+          "request":{"method":"GET","url":{"raw":"{{baseUrl}}/notifications","host":["{{baseUrl}}"],"path":["notifications"]}},
+          "response":[{"name":"200 OK","status":"OK","code":200,"body":"{\"notifications\":[]}"}]
+        }
+      ]
+    },
+    {
+      "name":"Payments",
+      "item":[
+        {
+          "name":"GET /payments",
+          "request":{"method":"GET","url":{"raw":"{{baseUrl}}/payments","host":["{{baseUrl}}"],"path":["payments"]}},
+          "response":[{"name":"200 OK","status":"OK","code":200,"body":"{\"payments\":[]}"}]
+        }
+      ]
+    }
+  ],
+  "variable":[
+    {"key":"baseUrl","value":"http://localhost:8080"}
+  ]
+}

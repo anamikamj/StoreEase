@@ -1,0 +1,16 @@
+com\storeease\storeease_backend\StoreeaseBackendApplication.class
+com\storeease\storeease_backend\model\User.class
+com\storeease\storeease_backend\model\OrderItemKey.class
+com\storeease\storeease_backend\controller\TestController.class
+com\storeease\storeease_backend\model\Notification.class
+com\storeease\storeease_backend\model\Item.class
+com\storeease\storeease_backend\repository\OrderItemRepository.class
+com\storeease\storeease_backend\repository\PaymentRepository.class
+com\storeease\storeease_backend\controller\DemoController.class
+com\storeease\storeease_backend\repository\OrderRepository.class
+com\storeease\storeease_backend\repository\ItemRepository.class
+com\storeease\storeease_backend\repository\NotificationRepository.class
+com\storeease\storeease_backend\repository\UserRepository.class
+com\storeease\storeease_backend\model\Order.class
+com\storeease\storeease_backend\model\OrderItem.class
+com\storeease\storeease_backend\model\Payment.class

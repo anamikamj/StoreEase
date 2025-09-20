@@ -7,9 +7,10 @@ import java.util.Objects;
 @Entity
 @Table(name = "order_items")
 
-@EmbeddedId
+
 public class OrderItem {
 
+    @EmbeddedId
     private OrderItemKey id;
 
     @ManyToOne

@@ -5,7 +5,7 @@ import java.sql.*;
 public class DBUtil {
     private static final String URL = "jdbc:mysql://localhost:3306/storeease";
     private static final String USER = "root";
-    private static final String PASSWORD = "password";
+    private static final String PASSWORD = "root123";
 
     static {
         try {

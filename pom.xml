@@ -18,10 +18,12 @@
     <name>storeease-backend</name>
     <description>StoreEase backend using Spring Boot</description>
 
+
     <properties>
         <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
-
     <dependencies>
         <!-- Core Spring Boot Starter -->
         <dependency>
@@ -63,13 +65,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Lombok (optional) -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.30</version>
-            <scope>provided</scope>
-        </dependency>
+
     </dependencies>
 
     <build>

@@ -1,11 +1,13 @@
 package com.storeease.storeease_backend.util;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DBUtil {
     private static final String URL = "jdbc:mysql://localhost:3306/storeease";
-    private static final String USER = "root";
-    private static final String PASSWORD = "root123";
+    private static final String USER = "storeuser";
+    private static final String PASSWORD = "store123";
 
     static {
         try {

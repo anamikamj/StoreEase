@@ -8,7 +8,7 @@ public class Item {
     private String type;
     private BigDecimal price;
     private Integer quantity;
-    private Integer threshold;
+    private Integer threshold; // no default
 
     public Item() {
     }
@@ -18,7 +18,7 @@ public class Item {
         this.type = type;
         this.price = price;
         this.quantity = quantity;
-        this.threshold = threshold;
+        this.threshold = threshold; // can be null
     }
 
     public Long getItemId() {
@@ -66,7 +66,7 @@ public class Item {
     }
 
     public void setThreshold(Integer threshold) {
-        this.threshold = threshold;
+        this.threshold = threshold; // no default
     }
 
     @Override
